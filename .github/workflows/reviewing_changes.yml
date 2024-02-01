@@ -57,6 +57,8 @@ jobs:
         run: |
           dotnet new globaljson --sdk-version ${{ steps.dotnetsetup.outputs.dotnet-version }}
           dotnet --version
+          dotnet new tool-manifest
+          dotnet tool install dotnetsay
           dotnet restore | dotnet tool restore
           dotnet build
 
