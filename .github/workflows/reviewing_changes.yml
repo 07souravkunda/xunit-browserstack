@@ -63,6 +63,7 @@ jobs:
           dotnet tool install dotnetsay
           dotnet restore | dotnet tool restore
           dotnet build
+        shell: bash
 
       - name: Run sample tests
         run: dotnet test --filter "Category=sample-test"
