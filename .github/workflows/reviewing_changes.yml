@@ -52,6 +52,8 @@ jobs:
         id: dotnetsetup
         with:
           dotnet-version: ${{ matrix.dotnet }}
+      - name: Clean
+        run: dotnet clean && dotnet nuget locals all --clear    
 
       - name: Install dependencies
         run: |
