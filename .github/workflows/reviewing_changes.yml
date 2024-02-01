@@ -57,6 +57,7 @@ jobs:
         run: |
           dotnet new globaljson --sdk-version ${{ steps.dotnetsetup.outputs.dotnet-version }}
           dotnet --version
+          dotnet restore | dotnet tool restore
           dotnet build
 
       - name: Run sample tests
